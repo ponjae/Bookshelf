@@ -8,9 +8,15 @@
 
 <body>
     <h1>My Library</h1>
+    {% if books == [] %}
+    <p>Libary is empty. You need to read more books!</p>
+    {% else %}
     <ul>
-        <li></li>
+        {% for book in books %}
+        <li>{{book.title}} - {{book.author}} - {{book.rating}}/10</li>
+        {% endfor %}
     </ul>
+    {% endif %}
 
     <a href="/add">Add New Book</a>
 </body>
